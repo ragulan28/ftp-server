@@ -51,15 +51,12 @@
 			</beans:bean>
 		</ftplet>
 	</ftplets>
-	
-	<db-user-manager encrypt-passwords="clear">
+	<!-- The user manager, choose one -->
+	<file-user-manager file="users.properties"
+		encrypt-passwords="true" />
+	<!--<db-user-manager>
 		<data-source>
-			<beans:bean class="org.apache.commons.dbcp.BasicDataSource">
-        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <beans:property name="url" value="jdbc:mysql://localhost:3306/ftpd" />
-        <beans:property name="username" value="token" />
-              <beans:property name="password" value="Debaly@#1994" />
-    </beans:bean>
+			<beans:bean class="some.datasoure.class" />
 		</data-source>
 		<insert-user>INSERT INTO FTP_USER (userid, userpassword,
 			homedirectory, enableflag, writepermission, idletime, uploadrate,
@@ -88,7 +85,7 @@
 		</is-admin>
 			<authenticate>SELECT userpassword from FTP_USER WHERE
 				userid='{userid}'</authenticate>
-	</db-user-manager>
+	</db-user-manager> -->
 	<!-- The file system -->
 	<native-filesystem case-insensitive="false"
 		create-home="true" />
