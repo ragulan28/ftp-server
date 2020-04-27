@@ -26,5 +26,5 @@
             </ssl>
 		</nio-listener>
 	</listeners>
-	<file-user-manager file="./res/conf/users.properties" />
+	<file-user-manager file="./res/conf/users.properties" encrypt-passwords="true"  />
 </server>
