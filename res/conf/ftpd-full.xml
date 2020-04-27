@@ -56,7 +56,7 @@
 		<data-source>
 			<beans:bean class="org.apache.commons.dbcp.BasicDataSource">
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <beans:property name="url" value="jdbc:mysql://localhost/ftpd" />
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/ftpd" />
         <beans:property name="username" value="token" />
               <beans:property name="password" value="Debaly@#1994" />
     </beans:bean>
